@@ -7,7 +7,14 @@ spring:
       uri: http://localhost:8888
   thymeleaf:
     cache: false
-    prefix: classpath:/templates           
+    prefix: classpath:/templates
+  security:
+   user:
+    name: admin
+    password: admin
+    role: USER
+   basic:
+    enabled: false                
   datasource:
     url: jdbc:h2:mem:personas;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     platform: h2
@@ -41,18 +48,6 @@ server:
   port: 9980
   tomcat:
     basedir: target/tomcat/
-############## Security properties ###############
-security:
-    user:
-      name: admin
-      password: admin
-      role: USER
-    basic:
-      enabled: true
-#    ignored: /**  
-management:
-  security:
-    enabled: true
 ############## Cloud properties ###############
 eureka:
   client:
